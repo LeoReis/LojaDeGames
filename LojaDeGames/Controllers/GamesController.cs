@@ -12,7 +12,7 @@ namespace LojaDeGames.Controllers
         // GET: Games
         public ActionResult Random()
         {
-            var game = new Jogo() { nome ="GTA V"};
+            var game = new Jogo() { Id = 5,Nome ="GTA V"};
             return View(game);
         }
     }

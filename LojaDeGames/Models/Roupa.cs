@@ -7,5 +7,8 @@ namespace LojaDeGames.Models
 {
     public class Roupa
     {
+        public int Id { get; set; }
+        public string Tipo { get; set; }
+        public string Categoria { get; set; }
     }
 }
