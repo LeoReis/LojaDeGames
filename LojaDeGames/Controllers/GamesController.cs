@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LojaDeGames.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,10 +10,10 @@ namespace LojaDeGames.Controllers
     public class GamesController : Controller
     {
         // GET: Games
-        public ActionResult Index()
+        public ActionResult Random()
         {
-            var game = new GamesController() {};
-            return View();
+            var game = new Jogo() { nome ="GTA V"};
+            return View(game);
         }
     }
 }

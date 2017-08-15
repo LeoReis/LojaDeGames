@@ -203,9 +203,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Acessorio.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jogo.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Roupa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -267,7 +271,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Games\index.cshtml" />
+    <Content Include="Views\Games\Random.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
