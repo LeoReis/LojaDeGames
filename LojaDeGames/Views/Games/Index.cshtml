@@ -1,0 +1,26 @@
+﻿@model LojaDeGames.Models.GameIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (@Model.Jogos.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th><h3>Jogos</h3></th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var jogos in Model.Jogos)
+            {
+                <tr><td>Jogos: @Html.ActionLink(jogos.Nome, "DetalhesJogos", new { jogos.Id })</td></tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>We don't have any customers yet.</p>
+}

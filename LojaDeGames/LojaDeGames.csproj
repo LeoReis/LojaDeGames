@@ -207,6 +207,7 @@
     <Compile Include="Models\Acessorio.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\GameIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jogo.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -272,12 +273,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Games\Random.cshtml" />
-    <Content Include="Views\Cliente\Cliente.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\Games\DetalhesJogos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Jogo\" />
+    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
