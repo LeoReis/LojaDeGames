@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LojaDeGames.Models
 {
-    public class GameIndexViewModel
+    public class JogoIndexViewModel
     {
         public List<Jogo> Jogos { get; set; }
     }

@@ -4,9 +4,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ID: @Model.Id</h2><br />
-<h2>Nome: @Model.Nome</h2><br />
-<h2>Genero: @Model.Genero</h2><br />
-<h2>Faixa Etaria: @Model.FaixaEtaria</h2><br />
-<h2>Desenvolvedora: @Model.Desenvolvedora</h2><br />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr><th><h1 style="text-align:center">Informações</h1></th></tr>
+    </thead>
+    <tbody>
+         <tr><th><h3>ID: @Model.Id</h3></th></tr>
+        
+         <tr><th><h3>Nome: @Model.Nome</h3></th></tr>
+        
+         <tr><th><h3>Genero: @Model.Genero</h3></th></tr>
+        
+         <tr><th><h3>Faixa Etaria: @Model.FaixaEtaria</h3></th></tr>
+        
+         <tr><th><h3>Desenvolvedora: @Model.Desenvolvedora</h3></th></tr>
+        
+    </tbody>
+
+</table>
+
+@if (Request.UrlReferrer != null)
+{
+    <button style="background-color:black" class="bottomNav" onclick="history.go(-1); return false;" href="#">Voltar</button><br />
+}
 

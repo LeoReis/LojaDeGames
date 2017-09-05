@@ -1,4 +1,4 @@
-﻿@model LojaDeGames.Models.GameIndexViewModel
+﻿@model LojaDeGames.Models.JogoIndexViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -9,13 +9,13 @@
 {
     <table class="table table-bordered table-hover">
         <thead>
-            <tr><th><h3>Jogos</h3></th></tr>
+            <tr><th><h3 style="text-align:center">Jogos</h3></th></tr>
         </thead>
         <tbody>
 
             @foreach (var jogos in Model.Jogos)
             {
-                <tr><td>Jogos: @Html.ActionLink(jogos.Nome, "DetalhesJogos", new { jogos.Id })</td></tr>
+                <tr><td>@Html.ActionLink(jogos.Nome, "DetalhesJogos", new { jogos.Id })</td></tr>
             }
         </tbody>
     </table>

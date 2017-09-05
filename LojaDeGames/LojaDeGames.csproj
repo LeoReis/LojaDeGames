@@ -207,11 +207,11 @@
     <Compile Include="Models\Acessorio.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Funcionario.cs" />
-    <Compile Include="Models\GameIndexViewModel.cs" />
+    <Compile Include="Models\JogoIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jogo.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Roupa.cs" />
+    <Compile Include="Models\Console.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

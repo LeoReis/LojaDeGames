@@ -15,13 +15,14 @@ namespace LojaDeGames.Controllers
             new Jogo{Id = 2,Nome = "Red Dead Redemption",Genero = "Aventura",FaixaEtaria = "18+",Desenvolvedora =  "ROCKSTAR GAMES"},
             new Jogo{Id = 3,Nome = "Monster Hunter",Genero = "Aventura",FaixaEtaria = "12+",Desenvolvedora =  "Capcom"},
             new Jogo{Id = 4,Nome = "Street Fighter V",Genero = "Luta",FaixaEtaria = "12+",Desenvolvedora =  "Capcom"},
-            new Jogo{Id = 5,Nome = "Resident Evil IV",Genero = "Ação|Horror",FaixaEtaria = "16+",Desenvolvedora =  "Capcom"}
+            new Jogo{Id = 5,Nome = "Resident Evil VII",Genero = "Ação|Horror",FaixaEtaria = "16+",Desenvolvedora =  "Capcom"},
+            new Jogo{Id = 6,Nome = "Destiny 2",Genero = "Ação|Aventura",FaixaEtaria = "12+",Desenvolvedora =  "Bungie"}
         };
 
 
         public ActionResult Index()
         {
-            var gameIndexView = new GameIndexViewModel()
+            var gameIndexView = new JogoIndexViewModel()
             {
                 Jogos = listaJogos
             };
