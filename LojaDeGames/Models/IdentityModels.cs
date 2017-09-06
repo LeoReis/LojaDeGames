@@ -20,6 +20,10 @@ namespace LojaDeGames.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        public DbSet<Jogo> Jogos { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

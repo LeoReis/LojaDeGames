@@ -1,0 +1,27 @@
+﻿@model LojaDeGames.Models.ClienteIndexViewModel
+@{
+    ViewBag.Title = "IndexCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (@Model.Clientes.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th><h3 style="text-align:center">Clientes</h3></th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var clientes in Model.Clientes)
+            {
+                <tr><td>@Html.ActionLink(clientes.Nome, "DetalhesClientes", new { clientes.Id })</td></tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>We don't have any customers yet.</p>
+}
+
+

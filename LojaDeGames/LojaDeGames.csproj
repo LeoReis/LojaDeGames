@@ -203,9 +203,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709052350227_InitialModel.cs" />
+    <Compile Include="Migrations\201709052350227_InitialModel.Designer.cs">
+      <DependentUpon>201709052350227_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709060013232_PopulaCliente.cs" />
+    <Compile Include="Migrations\201709060013232_PopulaCliente.Designer.cs">
+      <DependentUpon>201709060013232_PopulaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Acessorio.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteIndexViewModel.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\JogoIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -275,10 +285,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Games\DetalhesJogos.cshtml" />
+    <Content Include="Views\Cliente\IndexCliente.cshtml" />
+    <Content Include="Views\Cliente\DetalhesClientes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -287,6 +298,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709052350227_InitialModel.resx">
+      <DependentUpon>201709052350227_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709060013232_PopulaCliente.resx">
+      <DependentUpon>201709060013232_PopulaCliente.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
