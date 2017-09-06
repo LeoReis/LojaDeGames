@@ -36,13 +36,13 @@ namespace LojaDeGames.Controllers
             return View(cliente);
         }
 
-        public ActionResult DetalhesClientes(int id)
-        {
-            if (id > listaCliente.Count) return HttpNotFound();
+        //public ActionResult DetalhesClientes(int id)
+        //{
+        //    if (id > listaCliente.Count) return HttpNotFound();
 
-            Cliente clientesDetalhe = listaCliente.Find(clientes => clientes.Id == id);
+        //    Cliente clientesDetalhe = listaCliente.Find(clientes => clientes.Id == id);
 
-            return View(clientesDetalhe);
-        }
+        //    return View(clientesDetalhe);
+        //}
     }
 }
