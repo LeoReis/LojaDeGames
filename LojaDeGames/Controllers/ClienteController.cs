@@ -32,17 +32,24 @@ namespace LojaDeGames.Controllers
         //};
         public ActionResult IndexCliente()
         {
-            var cliente = _context.Clientes.ToList();
-            return View(cliente);
+
+            var clienteIndexView = new ClienteIndexViewModel()
+            {
+                Clientes = _context.Clientes.ToList()
+            };
+           
+            return View(clienteIndexView);
         }
 
-        //public ActionResult DetalhesClientes(int id)
-        //{
-        //    if (id > listaCliente.Count) return HttpNotFound();
+        public ActionResult DetalhesClientes(int id)
+        {
+            
+            if (id > _context.Clientes.Count()) return HttpNotFound();
 
-        //    Cliente clientesDetalhe = listaCliente.Find(clientes => clientes.Id == id);
+            Cliente clientesDetalhe = _context.Clientes.Find(id);//(clientes => clientes.Id == id);
 
-        //    return View(clientesDetalhe);
-        //}
+            return View(clientesDetalhe);
+
+        }
     }
 }
