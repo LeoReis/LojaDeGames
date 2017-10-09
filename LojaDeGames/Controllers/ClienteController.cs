@@ -62,8 +62,15 @@ namespace LojaDeGames.Controllers
         [HttpPost] // só será acessada com POST
         public ActionResult Save(Cliente cliente) // recebemos um cliente
         {
+            if (cliente.Id != 0)
+            {
+                _context.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
+            }
+            else {
+                _context.Clientes.Add(cliente);
+            }
             // armazena o cliente em memória
-            _context.Clientes.Add(cliente);
+            
             // faz a persistência
             _context.SaveChanges();
             // Voltamos para a lista de clientes
@@ -84,5 +91,13 @@ namespace LojaDeGames.Controllers
 
             return View("FormCliente", viewModel);
         }
+        [HttpPost]
+        public ActionResult Edit(Cliente lala) {
+            var nome = lala.Nome;
+            var cpf = lala.Cpf;
+            var endereco = lala.Endereco;
+            return RedirectToAction("IndexCliente");
+        }
+      
     }
 }
