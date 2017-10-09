@@ -51,5 +51,38 @@ namespace LojaDeGames.Controllers
             return View(clientesDetalhe);
 
         }
+
+        public ActionResult New()
+        {
+            var viewModel = new ClienteIndexViewModel();
+            
+            return View("FormCliente", viewModel);
+        }
+
+        [HttpPost] // só será acessada com POST
+        public ActionResult Save(Cliente cliente) // recebemos um cliente
+        {
+            // armazena o cliente em memória
+            _context.Clientes.Add(cliente);
+            // faz a persistência
+            _context.SaveChanges();
+            // Voltamos para a lista de clientes
+            return RedirectToAction("IndexCliente");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
+
+            if (cliente == null)
+                return HttpNotFound();
+
+            var viewModel = new ClienteIndexViewModel
+            {
+                Cliente = cliente
+            };
+
+            return View("FormCliente", viewModel);
+        }
     }
 }

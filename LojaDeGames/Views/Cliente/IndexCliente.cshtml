@@ -4,7 +4,36 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (@Model.Clientes.Count > 0)
+
+<h2>Clientes</h2>
+@if (!Model.Clientes.Any())
+{
+    <p>Não temos nenhum cliente ainda.</p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("Novo Cliente", "New", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model.Clientes)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@cliente.Nome, "Edit", new { cliente.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@*@if (@Model.Clientes.Count > 0)
 {
     <table class="table table-bordered table-hover">
         <thead>
@@ -22,6 +51,6 @@
 else
 {
     <p>We don't have any customers yet.</p>
-}
+}*@
 
 

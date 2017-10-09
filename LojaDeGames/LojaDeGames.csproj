@@ -212,12 +212,12 @@
       <DependentUpon>201709060013232_PopulaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="ModelView\AccountViewModels.cs" />
     <Compile Include="Models\Acessorio.cs" />
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\ClienteIndexViewModel.cs" />
+    <Compile Include="ModelView\ClienteIndexViewModel.cs" />
     <Compile Include="Models\Funcionario.cs" />
-    <Compile Include="Models\JogoIndexViewModel.cs" />
+    <Compile Include="ModelView\JogoIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jogo.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -287,9 +287,11 @@
     <Content Include="Views\Games\DetalhesJogos.cshtml" />
     <Content Include="Views\Cliente\IndexCliente.cshtml" />
     <Content Include="Views\Cliente\DetalhesClientes.cshtml" />
+    <Content Include="Views\Cliente\FormCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
