@@ -26,6 +26,7 @@ else
             {
                 <tr>
                     <td>@Html.ActionLink(@cliente.Nome, "Edit", new { id=cliente.Id })</td>
+                     <td>@Html.ActionLink("Deletar", "Delete", new { id=cliente.Id})</td>
                 </tr>
             }
         </tbody>

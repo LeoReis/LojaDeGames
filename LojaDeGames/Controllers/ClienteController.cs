@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -91,13 +92,42 @@ namespace LojaDeGames.Controllers
 
             return View("FormCliente", viewModel);
         }
-        [HttpPost]
-        public ActionResult Edit(Cliente lala) {
-            var nome = lala.Nome;
-            var cpf = lala.Cpf;
-            var endereco = lala.Endereco;
-            return RedirectToAction("IndexCliente");
+
+
+        public ActionResult Delete(int id)
+        {
+
+            Cliente cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
+
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                _context.Clientes.Remove(cliente);
+                _context.SaveChanges();
+                return RedirectToAction("IndexCliente",cliente);
+                return View(cliente);
+            }
         }
-      
+
+        //[AcceptVerbs(HttpVerbs.Post)]
+        //public ActionResult Delete(int id, string confirmButton)
+        //{
+
+        //    Cliente cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
+
+        //    if (cliente == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+
+        //    _context.Clientes.Remove(cliente);
+        //    _context.SaveChanges();
+
+        //    return View("Deleted");
+        //}
+
     }
 }

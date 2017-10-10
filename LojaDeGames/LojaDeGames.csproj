@@ -288,6 +288,7 @@
     <Content Include="Views\Cliente\IndexCliente.cshtml" />
     <Content Include="Views\Cliente\DetalhesClientes.cshtml" />
     <Content Include="Views\Cliente\FormCliente.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
