@@ -61,8 +61,21 @@ namespace LojaDeGames.Controllers
         }
 
         [HttpPost] // só será acessada com POST
-        public ActionResult Save(Cliente cliente) // recebemos um cliente
+        
+        public ActionResult Save([Bind(Include = "Id,Nome,Cpf,Endereco")]Cliente cliente) // recebemos um cliente
         {
+            ModelState.Remove("cliente.Id");
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new ClienteIndexViewModel
+                {
+                    Cliente = cliente
+                };
+
+                return View("FormCliente", viewModel);
+            }
+
             if (cliente.Id != 0)
             {
                 _context.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
