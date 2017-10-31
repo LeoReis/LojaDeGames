@@ -61,7 +61,7 @@ namespace LojaDeGames.Controllers
         }
 
         [HttpPost] // só será acessada com POST
-        
+        [ValidateAntiForgeryToken]
         public ActionResult Save([Bind(Include = "Id,Nome,Cpf,Endereco")]Cliente cliente) // recebemos um cliente
         {
             ModelState.Remove("cliente.Id");

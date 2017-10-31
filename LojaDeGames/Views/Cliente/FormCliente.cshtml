@@ -8,6 +8,9 @@
 
 @using (Html.BeginForm("Save", "Cliente"))
 {
+        @Html.AntiForgeryToken();
+        @Html.HiddenFor(m => m.Cliente.Id);
+
     <div class="form-group" style="display: none">
         @Html.LabelFor(m => m.Cliente.Id)
         @Html.TextBoxFor(m => m.Cliente.Id, new { @class = "form-control" })
@@ -35,4 +38,10 @@
     <button type="submit" class="btn btn-primary">Salvar</button>
 
 }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
 
