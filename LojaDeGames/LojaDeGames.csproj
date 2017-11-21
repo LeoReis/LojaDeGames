@@ -215,12 +215,23 @@
     <Compile Include="Migrations\201710172201488_Validacao.Designer.cs">
       <DependentUpon>201710172201488_Validacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711200140542_atualizacaojogo.cs" />
+    <Compile Include="Migrations\201711200140542_atualizacaojogo.Designer.cs">
+      <DependentUpon>201711200140542_atualizacaojogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711210300446_teste.cs" />
+    <Compile Include="Migrations\201711210300446_teste.Designer.cs">
+      <DependentUpon>201711210300446_teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711212246207_createUsers.cs" />
+    <Compile Include="Migrations\201711212246207_createUsers.Designer.cs">
+      <DependentUpon>201711212246207_createUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MarcaType.cs" />
     <Compile Include="ModelView\AccountViewModels.cs" />
-    <Compile Include="Models\Acessorio.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="ModelView\ClienteIndexViewModel.cs" />
-    <Compile Include="Models\Funcionario.cs" />
     <Compile Include="ModelView\JogoIndexViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jogo.cs" />
@@ -292,10 +303,12 @@
     <Content Include="Views\Cliente\IndexCliente.cshtml" />
     <Content Include="Views\Cliente\DetalhesClientes.cshtml" />
     <Content Include="Views\Cliente\FormCliente.cshtml" />
-    <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Games\FormJogo.cshtml" />
+    <Content Include="Views\Cliente\IndexClienteOnlyRead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Console\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -314,6 +327,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710172201488_Validacao.resx">
       <DependentUpon>201710172201488_Validacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711200140542_atualizacaojogo.resx">
+      <DependentUpon>201711200140542_atualizacaojogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711210300446_teste.resx">
+      <DependentUpon>201711210300446_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212246207_createUsers.resx">
+      <DependentUpon>201711212246207_createUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

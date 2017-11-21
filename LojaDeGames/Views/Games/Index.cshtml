@@ -5,22 +5,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (@Model.Jogos.Count > 0)
+<h2>Jogos</h2>
+@if (!Model.Jogos.Any())
 {
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr><th><h3 style="text-align:center">Jogos</h3></th></tr>
-        </thead>
-        <tbody>
-
-            @foreach (var jogos in Model.Jogos)
-            {
-                <tr><td>@Html.ActionLink(jogos.Nome, "DetalhesJogos", new { jogos.Id })</td></tr>
-            }
-        </tbody>
-    </table>
+    <p>
+        @Html.ActionLink("Novo Jogo", "New", null, new { @class = "btn btn-primary" })
+    </p>
+    <p>Não temos nenhum jogo ainda.</p>
 }
 else
 {
-    <p>We don't have any customers yet.</p>
+    <p>
+        @Html.ActionLink("Novo Jogo", "New", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Jogo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var jogo in Model.Jogos)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@jogo.Nome, "Edit", new { id = jogo.Id })</td>
+                    <td>@Html.ActionLink("Deletar", "Delete", new { id = jogo.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace LojaDeGames.Controllers
 {
+    [Authorize]
     public class ClienteController : Controller
     {
         // GET: Cliente
@@ -38,9 +39,14 @@ namespace LojaDeGames.Controllers
             {
                 Clientes = _context.Clientes.ToList()
             };
+
+            if (User.IsInRole("CanManageCostumers"))
+                return View(clienteIndexView);
            
-            return View(clienteIndexView);
+            return View("IndexClienteOnlyRead",clienteIndexView);
         }
+
+
 
         public ActionResult DetalhesClientes(int id)
         {
@@ -52,13 +58,14 @@ namespace LojaDeGames.Controllers
             return View(clientesDetalhe);
 
         }
-
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult New()
         {
             var viewModel = new ClienteIndexViewModel();
             
             return View("FormCliente", viewModel);
         }
+
 
         [HttpPost] // só será acessada com POST
         [ValidateAntiForgeryToken]
@@ -90,7 +97,7 @@ namespace LojaDeGames.Controllers
             // Voltamos para a lista de clientes
             return RedirectToAction("IndexCliente");
         }
-
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Edit(int id)
         {
             var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
@@ -106,7 +113,7 @@ namespace LojaDeGames.Controllers
             return View("FormCliente", viewModel);
         }
 
-
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Delete(int id)
         {
 

@@ -5,11 +5,10 @@ using System.Web;
 
 namespace LojaDeGames.Models
 {
-    public class Funcionario
+    public class MarcaType
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public int Cpf { get; set; }
-        public string Endereco { get; set; }
+        public string Name { get; set; }
+
     }
 }
