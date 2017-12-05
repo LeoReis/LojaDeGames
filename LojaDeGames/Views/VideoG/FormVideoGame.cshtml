@@ -1,0 +1,43 @@
+﻿@model LojaDeGames.Models.VideoGIndexViewModel
+@{
+    ViewBag.Title = "Formulario Console";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save", "VideoG"))
+{
+    @Html.AntiForgeryToken();
+    @Html.HiddenFor(m => m.VideoG.Id);
+
+    <div class="form-group" style="display: none">
+        @Html.LabelFor(m => m.VideoG.Id)
+        @Html.TextBoxFor(m => m.VideoG.Id, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.VideoG.Nome)
+        @Html.TextBoxFor(m => m.VideoG.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.VideoG.Nome)
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.VideoG.Marca)
+        @Html.TextBoxFor(m => m.VideoG.Marca, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.VideoG.Marca)
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+

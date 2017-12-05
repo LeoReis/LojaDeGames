@@ -1,0 +1,36 @@
+﻿@model LojaDeGames.Models.VideoGIndexViewModel
+@{
+    ViewBag.Title = "IndexConsole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Consoles</h2>
+@if (!Model.VideoGs.Any())
+{
+    <p>
+        @Html.ActionLink("Novo Console", "New", null, new { @class = "btn btn-primary" })
+    </p>
+    <p>Não temos nenhum console ainda.</p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("Novo Console", "New", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Console</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var videoGame in Model.VideoGs)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@videoGame.Nome, "Edit", new { id = videoGame.Id })</td>
+                    <td>@Html.ActionLink("Deletar", "Delete", new { id = videoGame.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

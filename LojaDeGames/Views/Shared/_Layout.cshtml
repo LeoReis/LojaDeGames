@@ -22,7 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Jogos", "Index", "Games")</li>
-                    <li>@Html.ActionLink("Consoles", "About", "Home")</li>
+                    <li>@Html.ActionLink("Consoles", "IndexConsole", "VideoG")</li>
                     <li>@Html.ActionLink("Acessorios", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Clientes", "IndexCliente", "Cliente")</li>
                 </ul>
@@ -35,6 +35,11 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Minha Aplicação ASP.NET </p>
+
+            @if (Request.UrlReferrer != null)
+            {
+                <button style="background-color:black;float:right;margin-top:-3.5%" class="btn btn-primary" onclick="history.go(-1); return false;" href="#">Voltar</button><br />
+            }
         </footer>
     </div>
 

@@ -24,6 +24,8 @@ namespace LojaDeGames.Models
         public DbSet<Jogo> Jogos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
 
+        public DbSet<VideoG> VideoGs { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

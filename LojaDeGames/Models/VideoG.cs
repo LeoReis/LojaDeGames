@@ -6,16 +6,14 @@ using System.Web;
 
 namespace LojaDeGames.Models
 {
-    public class Console
+    public class VideoG
     {
         public int Id { get; set; }
+        [Required]
+        [StringLength(100)]
         public string Nome { get; set; }
-
+        [Required]
+        [StringLength(100)]
         public string Marca { get; set; }
-        public MarcaType MarcaType { get; set; }
-
-        // chave estrangeira
-        [Display(Name = "Marca")]
-        public byte MarcaTypeId { get; set; }
     }
 }

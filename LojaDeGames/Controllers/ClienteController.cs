@@ -40,10 +40,12 @@ namespace LojaDeGames.Controllers
                 Clientes = _context.Clientes.ToList()
             };
 
-            if (User.IsInRole("CanManageCostumers"))
+            if (User.IsInRole("adm"))
+            {
                 return View(clienteIndexView);
-           
+            }
             return View("IndexClienteOnlyRead",clienteIndexView);
+            
         }
 
 
@@ -58,7 +60,8 @@ namespace LojaDeGames.Controllers
             return View(clientesDetalhe);
 
         }
-        [Authorize(Roles = "CanManageCustomers")]
+        [Authorize(Roles = "CanManageCustomers")]
+
         public ActionResult New()
         {
             var viewModel = new ClienteIndexViewModel();
@@ -97,7 +100,7 @@ namespace LojaDeGames.Controllers
             // Voltamos para a lista de clientes
             return RedirectToAction("IndexCliente");
         }
-        [Authorize(Roles = "CanManageCustomers")]
+
         public ActionResult Edit(int id)
         {
             var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
@@ -113,7 +116,8 @@ namespace LojaDeGames.Controllers
             return View("FormCliente", viewModel);
         }
 
-        [Authorize(Roles = "CanManageCustomers")]
+    //    [Authorize(Roles = "CanManageCustomers")]
+
         public ActionResult Delete(int id)
         {
 
@@ -128,7 +132,7 @@ namespace LojaDeGames.Controllers
                 _context.Clientes.Remove(cliente);
                 _context.SaveChanges();
                 return RedirectToAction("IndexCliente",cliente);
-                return View(cliente);
+              
             }
         }
 

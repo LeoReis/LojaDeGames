@@ -5,10 +5,8 @@ using System.Web;
 
 namespace LojaDeGames.Models
 {
-    public class MarcaType
+    public class RoleName
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
+        public const string adm = "adm";
     }
 }
