@@ -1,0 +1,31 @@
+﻿@model LojaDeGames.Models.JogoIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Jogos</h2>
+@if (!Model.Jogos.Any())
+{
+
+    <p>Não temos nenhum jogo ainda.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Jogo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var jogo in Model.Jogos)
+            {
+                <tr>
+                    <td>@jogo.Nome</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

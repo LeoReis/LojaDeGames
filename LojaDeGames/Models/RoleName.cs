@@ -7,6 +7,6 @@ namespace LojaDeGames.Models
 {
     public class RoleName
     {
-        public const string adm = "adm";
+        public const string CanManageCustomers = "CanManageCustomers";
     }
 }

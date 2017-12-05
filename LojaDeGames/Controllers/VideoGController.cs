@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace LojaDeGames.Controllers
 {
+    
     public class VideoGController : Controller
     {
 

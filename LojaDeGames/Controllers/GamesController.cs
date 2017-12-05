@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace LojaDeGames.Controllers
 {
-    [Authorize]
+   
     public class GamesController : Controller
     {
 

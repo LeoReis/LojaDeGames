@@ -1,0 +1,31 @@
+﻿@model LojaDeGames.Models.VideoGIndexViewModel
+@{
+    ViewBag.Title = "IndexConsole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Consoles</h2>
+@if (!Model.VideoGs.Any())
+{
+   
+    <p>Não temos nenhum console ainda.</p>
+}
+else
+{
+  
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Console</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var videoGame in Model.VideoGs)
+            {
+                <tr>
+                    <td>@videoGame.Nome</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -337,6 +337,8 @@
     <Content Include="Views\VideoG\IndexConsole.cshtml" />
     <Content Include="Views\VideoG\DetalhesVideoGame.cshtml" />
     <Content Include="Views\VideoG\FormVideoGame.cshtml" />
+    <Content Include="Views\Console\IndexConsoleReadOnly.cshtml" />
+    <Content Include="Views\Games\IndexGamesReadOnly.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

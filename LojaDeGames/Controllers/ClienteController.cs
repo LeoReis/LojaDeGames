@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace LojaDeGames.Controllers
 {
-    [Authorize]
+   
     public class ClienteController : Controller
     {
         // GET: Cliente
@@ -40,11 +40,8 @@ namespace LojaDeGames.Controllers
                 Clientes = _context.Clientes.ToList()
             };
 
-            if (User.IsInRole("adm"))
-            {
-                return View(clienteIndexView);
-            }
-            return View("IndexClienteOnlyRead",clienteIndexView);
+
+            return View(clienteIndexView);
             
         }
 
